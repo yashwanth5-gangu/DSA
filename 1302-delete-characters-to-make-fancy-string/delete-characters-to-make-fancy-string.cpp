@@ -8,20 +8,17 @@ public:
         for (int i = 1; i < n; i++) {
             if (s[i] == s[i - 1]) {
                 count++;
-               
+
                 if (count >= 2) {
-             
+
                     continue;
                 }
 
-            } else{
-                count=0;
+            } else {
+                count = 0;
             }
-           
 
-                ans += s[i];
-               
-            
+            ans += s[i];
         }
 
         return ans;
