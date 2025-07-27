@@ -4,8 +4,8 @@ public:
         sort(nums.begin(),nums.end());
         long long ans=0;
         int n=nums.size();
-        int d=n/3;
-        for(int i=d;i<n;i+=2){
+       
+        for(int i=n/3;i<n;i+=2){
             ans+=nums[i];
         }
         
