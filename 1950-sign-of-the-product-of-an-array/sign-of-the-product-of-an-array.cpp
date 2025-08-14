@@ -1,11 +1,19 @@
 class Solution {
 public:
+int  func(long long  pro){
+    if(pro<0)return -1;
+    if(pro==0)return 0;
+   return 1;
+    
+}
     int arraySign(vector<int>& nums) {
-        int count=0;
-        for(int num :nums){
-            if(num==0)return 0;
-            if(num<0)count++;
+        long long  pro=1;
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]==0)return 0;
+            else{
+            pro*=nums[i]/abs(nums[i]);
+            }
         }
-        return (count%2==0)?1:-1;
+        return func(pro);
     }
 };
