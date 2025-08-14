@@ -1,9 +1,15 @@
-select de.name as Department ,ee.name as Employee,  ee.salary as Salary
-from employee ee
-left join department de
-on ee.departmentid=de.id
-where ee.salary=(
-    select max(salary)
-    from employee e2
-    where e2.departmentid =ee.departmentid
-)
+
+       with cte as( 
+        select de.name as department ,ee.name as employee,ee.salary,
+        max(salary) over(partition by ee.departmentid )as maxsalary
+        from employee ee
+        join department de
+        on ee.departmentid=de.id
+       )
+
+         select Department,Employee,salary as Salary
+       from cte
+       where maxsalary=salary
+
+
+
