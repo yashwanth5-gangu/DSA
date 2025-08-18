@@ -12,7 +12,7 @@ public:
                 l++;
             }
             maxi=max(maxi,r-l+1);
-            mask=mask|nums[r];
+            mask=mask | nums[r];
             r++;
         }
         return maxi;
