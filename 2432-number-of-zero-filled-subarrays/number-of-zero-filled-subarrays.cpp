@@ -8,18 +8,12 @@ public:
         for (int i = 0; i < n; i++) {
             if (nums[i] == 0) {
                 count++;
+                count1+=count;
             } else {
-                while (count > 0) {
-
-                    count1 += count;
-                    count--;
-                }
+               count=0;
             }
         }
-        while(count>0){
-            count1+=count;
-            count--;
-        }
+       
     
     return count1;
 }
