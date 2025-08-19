@@ -3,17 +3,18 @@ public:
     int longestContinuousSubstring(string s) {
         int n=s.size();
         int maxi=1;
-        int count=0;
+        int count=1;
         for(int i=1;i<n;i++){
             if((s[i]-'a')==(s[i-1]-'a'+1)){
                 count++;
+             maxi=max(maxi,count);
                 
             }
             else{
                
-                count=0;
+                count=1;
             }
-             maxi=max(maxi,count+1);
+             
         }
         return maxi;
         
