@@ -9,7 +9,7 @@ void func(string s,unordered_set<string>ans,int i,int  &maxicount,int currcount)
     }
     string curr;
     for(int j=i;j<s.size();j++){
-        curr+=s[j];
+       curr=s.substr(i,j-i+1);
       if(ans.find(curr)==ans.end()){
         ans.insert(curr);
         func(s,ans,j+1,maxicount,currcount+1);
