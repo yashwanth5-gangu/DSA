@@ -1,7 +1,7 @@
 class Solution {
 public:
    bool func(string s,int k){
-
+     int t;
     int count1=0;
     int count2=0;
     for(int i=0;i<s.size();i++){
