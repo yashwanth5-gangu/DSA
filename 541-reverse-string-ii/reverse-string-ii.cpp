@@ -1,25 +1,15 @@
 class Solution {
 public:
     string reverseStr(string s, int k) {
-        int n=s.size();
-        if(n<k){
-            reverse(s.begin(),s.end());
-            return s;
+        int n = s.size();
+        int start = 0;
 
-        }else{
-      int start=0;
-      int end=k;
-       reverse(s.begin()+start,s.begin()+end);
-      while(start+2*k<n){
-        start=start+2*k;
-         end=min(start+k,n);
-         reverse(s.begin()+start,s.begin()+end);
-       
-        
-
-      }
-    
+        while (start < n) {
+            int end = min(start + k, n); 
+            reverse(s.begin() + start, s.begin() + end);
+            start += 2 * k; 
         }
-      return s;
+
+        return s;
     }
 };
