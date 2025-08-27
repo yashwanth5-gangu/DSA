@@ -6,7 +6,7 @@ public:
         long long maxarea=0;
         int n=beans.size();
         for(int i=0;i<n;i++){
-            maxarea=max(maxarea,(long long )beans[i] *(n-i)*1ll);
+            maxarea=max(maxarea,(long long )beans[i] *(n-i));
 
         }
         return sum-maxarea;
