@@ -7,15 +7,12 @@ public:
         for(int i=1;i<n;i++){
             ans[i]=ans[i-1]*nums[i-1];
         }
-        vector<int>right(n);
-      right[n-1]=1;
-      for(int i=n-2;i>=0;i--){
-        right[i]=right[i+1]*nums[i+1];
+       int rightpro=1;
+   
+      for(int i=n-1;i>=0;i--){
+        ans[i]=ans[i]*rightpro;
+        rightpro=rightpro*nums[i];
       }
-      vector<int>result(n);
-      for(int i=0;i<n;i++){
-        result[i]=ans[i]*right[i];
-      }
-      return result;
+      return ans;
     }
 };
