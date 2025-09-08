@@ -23,6 +23,7 @@ class Solution {
              return cmp;
              });
             li.add(new1.get(t-1).index);
+            new1.clear();
              
              
         }
