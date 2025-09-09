@@ -35,7 +35,7 @@ return new String(arr);
                 visited[s.charAt(i)-'a']=true;
             }
         }
-        ans=reverse(ans);
-        return ans;
+       String ans1= new StringBuilder(ans).reverse().toString();
+        return ans1;
     }
 }
