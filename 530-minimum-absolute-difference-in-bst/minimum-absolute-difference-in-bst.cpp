@@ -14,6 +14,9 @@ public:
     int getMinimumDifference(TreeNode* root) {
         vector<int>ans;
         inorder(root,ans);
+        for(int i=0;i<ans.size();i++){
+            cout<<ans[i]<<" ";
+        }
         int maxi=INT_MAX;
         for(int i=0;i<ans.size()-1;i++){
             maxi=min(maxi,abs(ans[i]-ans[i+1]));
