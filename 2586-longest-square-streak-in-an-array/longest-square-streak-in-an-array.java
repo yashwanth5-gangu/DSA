@@ -10,7 +10,7 @@ class Solution {
        while(st.contains(num)){
             streak++;
             num=num*num;
-            if(num>1e5)break;
+           // if(num>1e5)break;
         }
         maxi=Math.max(maxi,streak);
         }
