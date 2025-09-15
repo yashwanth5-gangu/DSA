@@ -1,25 +1,24 @@
 class Solution {
 public:
     int canBeTypedWords(string text, string bro) {
-       stringstream ss(text);
-       string ans;
-       int count=0;
-       while(getline(ss,ans,' ')){
-         bool flag=true;
-          for(int i=0;i<bro.size();i++){
-            for(int j=0;j<ans.size();j++){
-                if(bro[i]==ans[j]){
+        vector<bool>ans(26,false);
+        for(char c :bro){
+            ans[c-'a']=true;
+        }
+        int count=0;
+        bool flag=true;
+        for(int i=0;i<text.size();i++){
+            if(text[i]!=' '){
+                if(ans[text[i]-'a']){
                     flag=false;
-                    break;
                 }
             }
-            if(flag==false)break;
-          }
-            if(flag==true){
-                count++;
+            else{
+                if(flag)count++;
+                flag=true;
             }
-          
-       }
-       return count;
+        }
+        if(flag)count++;
+        return count;
     }
 };
