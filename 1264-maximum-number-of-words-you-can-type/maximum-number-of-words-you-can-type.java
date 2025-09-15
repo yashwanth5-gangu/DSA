@@ -1,23 +1,23 @@
 class Solution {
     public int canBeTypedWords(String text, String bro) {
-        String[] arr=text.split("\\s+");
+        boolean []arr=new boolean[26];
+        for(char c: bro.toCharArray()){
+            arr[c-'a']=true;
+        }
         int count=0;
-        for(int i=0;i<arr.length;i++){
-            String t=arr[i];
-            boolean flag=true;
-            for(int j=0;j<bro.length();j++){
-                for(int k=0;k<t.length();k++){
-                    if(bro.charAt(j)==t.charAt(k)){
-                        flag=false;
-                        break;
-                    }
-                }
-                if(flag==false){
-                    break;
+        boolean flag=true;
+        for(int i=0;i<text.length();i++){
+            if(text.charAt(i)!=' '){
+                if(arr[text.charAt(i)-'a']){
+                    flag=false;
                 }
             }
-            if(flag==true)count++;
+            else{
+                if(flag)count++;
+                flag=true;
+            }
         }
+        if(flag)count++;
         return count;
     }
 }
