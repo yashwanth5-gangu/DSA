@@ -7,8 +7,8 @@ public:
         }
         int count=0;
         bool flag=true;
-        for(int i=0;i<text.size();i++){
-            if(text[i]!=' '){
+        for(int i=0;i<=text.size();i++){
+            if(i<text.size() && text[i]!=' '){
                 if(ans[text[i]-'a']){
                     flag=false;
                 }
@@ -18,7 +18,7 @@ public:
                 flag=true;
             }
         }
-        if(flag)count++;
+       
         return count;
     }
 };
