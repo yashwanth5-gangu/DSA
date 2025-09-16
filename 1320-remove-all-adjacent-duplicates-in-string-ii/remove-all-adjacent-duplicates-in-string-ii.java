@@ -23,11 +23,12 @@ class Solution {
         }
         StringBuilder str=new StringBuilder();
         while(!st.empty()){
-            Pair p=st.pop();
-            for(int i=0;i<p.t;i++){
-            str.append(p.c);
+            
+            for(int i=0;i<st.peek().t;i++){
+            str.append(st.peek().c);
             
             }
+            st.pop();
         }
         return str.reverse().toString();
     }
